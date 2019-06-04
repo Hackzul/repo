@@ -69,12 +69,8 @@ namespace reproducctor
 
             //Ya descargado se inicia la conversión a MP3
             var Convert = new NReco.VideoConverter.FFMpegConverter();
-            //Especificar la carpeta donde se van a guardar los archivos, recordar la \ del final
+      
             String SaveMP3File = @"C:\Users\Alejandro\Source\Repos\repo\Reproductor\reproducctor\bin\Debug\" + fileName.Replace(".mp4", ".mp3");
-            //Guarda el archivo convertido en la ubicación indicada
-            Convert.ConvertMedia(fileName, SaveMP3File, "mp3");
-
-            //Si el checkbox de solo audio está chequeado, borrar el mp4 despues de la conversión
            
                 File.Delete(fileName);
 
@@ -84,11 +80,7 @@ namespace reproducctor
             tmrVideo.Enabled = false;
             txtMensaje.BackColor = Color.White;
 
-            //TODO: Cargar el MP3 al reproductor o a la lista de reproducción
-            //CargarMP3s();
-            //Se puede incluir un checkbox para indicar que de una vez se reproduzca el MP3
-            //if (ckbAutoPlay.Checked) 
-            //  ReproducirMP3(SaveMP3File);
+        
             return;
 
         }
